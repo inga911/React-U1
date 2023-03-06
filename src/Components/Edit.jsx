@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 function Edit({ setEditData, modalData, setModalData }) {
 
  
-    const [lesos, setLesos] = useState('');
+    const [lesos, setLesos] = useState(null);
 
     useEffect(() => {
         if (null === modalData) {
             return;
         }
-        setLesos(modalData.lesos);
+        setLesos('');
 
     }, [modalData]);
 
@@ -53,7 +53,6 @@ function Edit({ setEditData, modalData, setModalData }) {
                     <div className="modal-footer">
                         <button type="button" className="btn btn-outline-danger" onClick={() => setModalData(null)}>Nuskaiciuoti</button>
                         <button type="button" className="btn btn-outline-success" onClick={edit}>Pridėti</button>
-                        <button type="button" className="btn btn-outline-primary" onClick={edit}>Išsaugoti</button>
                     </div>
                 </div>
             </div>
