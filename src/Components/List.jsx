@@ -30,7 +30,6 @@ function List({ list, setDeleteData, setModalData }) {
                         ?
                         list.map(w => <li key={w.id} className="list-group-item">
                             {w.vardas} {w.pavarde} {w.lesos}
-                            <div><input type="text" placeholder="0" /></div>
                             <div className="ed-button" onClick={() => edit(w)}></div>
                             <div className="del-button" onClick={() => destroy(w)}></div>
                             </li>)

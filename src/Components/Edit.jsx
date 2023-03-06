@@ -2,25 +2,27 @@ import { useEffect, useState } from 'react';
 
 function Edit({ setEditData, modalData, setModalData }) {
 
-    const [vardas, setVardas] = useState('');
+ 
+    const [lesos, setLesos] = useState('');
 
     useEffect(() => {
         if (null === modalData) {
             return;
         }
-        setVardas(modalData.vardas);
+        setLesos(modalData.lesos);
 
     }, [modalData]);
 
-    const doVardas = e => {
-        setVardas(e.target.value);
+
+    const doLesos = e => {
+        setLesos(e.target.value);
     }
 
 
 
     const edit = () => {
         setEditData({
-            vardas,
+            lesos,
             id: modalData.id
         });
         setModalData(null);
@@ -43,7 +45,7 @@ function Edit({ setEditData, modalData, setModalData }) {
                             <div className="card-body">
                                 <div className="m-3">
                                     <label className="form-label">Įrašykite sumą</label>
-                                    <input type="text" className="form-control" onChange={doVardas} value={vardas} />
+                                    <input type="text" className="form-control" onChange={doLesos} value={lesos} />
                                 </div>
                             </div>
                         </div>
